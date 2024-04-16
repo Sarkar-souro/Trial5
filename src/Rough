@@ -1,0 +1,5 @@
+ { <form>
+        <input placeholder="Name" type="text"></input>
+        <input placeholder="Phone No." type="text"></input>
+        <input placeholder="E-mail" type="text"></input>
+      </form>}

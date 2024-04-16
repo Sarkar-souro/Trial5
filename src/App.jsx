@@ -3,15 +3,19 @@
 import React from 'react';
 import CustomerList from './CustomerList';
 import Create from './Create'
-import Update from './Update';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import EditForm from './Editform';
 
 const App = () => {
   return (
     <div>
-      <h1>My App</h1>
-      <CustomerList />
-      <Create />
-      <Update />
+      <Router>
+            <Routes>
+                <Route path="/" element={<CustomerList />} />
+                <Route path="/add" element={<Create />} />
+                <Route path="/edit/:id" element={<EditForm />} />
+            </Routes>
+        </Router>
     </div>
   );
 };

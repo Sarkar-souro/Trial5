@@ -9,7 +9,7 @@ const CustomerList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://hammerhead-app-tzlph.ondigitalocean.app/customers?pageNo=0&pageSize=20`);
+        const response = await axios.get(`https://hammerhead-app-tzlph.ondigitalocean.app/customers?pageNo=1&pageSize=20`, requestOptions);
         setCustomers(response.data.content);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -22,13 +22,7 @@ console.log(customers);
   return (
     <div>
       <h2>Customer List</h2>
-      {/* <ul>
-        {customers.map(customer => (
-          <li key={customer.customerId}>
-            {customer.customerName} - {customer.customerEmail} 
-          </li>
-        ))}
-      </ul> */}
+      
       <CustomPaginationActionsTable data={customers} />
     </div>
   );
