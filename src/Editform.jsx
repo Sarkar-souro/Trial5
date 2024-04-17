@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-const EditForm = () => {
+function EditForm  ()  {
     const data = {
         
         customerName: "",
@@ -52,7 +52,7 @@ const EditForm = () => {
                         <br></br>
                         <label> Mobile:</label>
                         <input
-                            type="tel"
+                            type="text"
                             onChange={handleInput}
                             id="mobileNo"
                             name="Mobile"
@@ -76,7 +76,7 @@ const EditForm = () => {
                                 color: "white",
                                 marginBottom: "15px",
                             }}
-                            type="submit"
+                            type="update"
                         >
                             Update
                         </button>

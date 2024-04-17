@@ -167,6 +167,9 @@ export default function CustomPaginationActionsTable() {
               Customer Email
             </TableCell>
             <TableCell style={{ width: 160, fontWeight: 800 }} align="right">
+              Customer ID
+            </TableCell>
+            <TableCell style={{ width: 160, fontWeight: 800 }} align="right">
               Customer Mobile
             </TableCell>
             <TableCell style={{ width: 160, fontWeight: 800 }} align="right">
@@ -292,6 +295,9 @@ export default function CustomPaginationActionsTable() {
                 </TableCell>
                 <TableCell style={{ width: 160 }} align="right">
                   {row.customerEmail}
+                </TableCell>
+                <TableCell style={{ width: 160 }} align="right">
+                  {row.customerId}
                 </TableCell>
                 <TableCell style={{ width: 160 }} align="right">
                   {row.customerMobile}
