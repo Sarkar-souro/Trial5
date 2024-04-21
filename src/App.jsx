@@ -4,8 +4,9 @@ import React from 'react';
 import CustomerList from './CustomerList';
 import Create from './Create'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import EditForm from './Editform';
-import { Update } from '@mui/icons-material';
+import EditCustomer from './EditCustomer';
+
+
 
 const App = () => {
   return (
@@ -14,7 +15,7 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<CustomerList />} />
                 <Route path="/add" element={<Create />} />
-                <Route path="/edit/:id" element={<Update />} />
+                <Route path="/edit/:id" element={<EditCustomer />} />
             </Routes>
         </Router>
     </div>

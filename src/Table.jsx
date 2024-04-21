@@ -115,7 +115,8 @@ export default function CustomPaginationActionsTable() {
   const [rowsPerPage, setRowsPerPage] = React.useState(20);
   const [totalPages, setTotalPages] = useState(0);
   const [loading, setLoading] = useState(false);
-
+  const [search, setSearch] = React.useState("");
+  
   useEffect(() => {
     fetchData();
   }, [page, rowsPerPage]);

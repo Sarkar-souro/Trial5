@@ -22,14 +22,15 @@ export default function EditCustomer() {
             redirect: "follow",
         };
 
-        fetch("https://hammerhead-app-tzlph.ondigitalocean.app/customers/269" + "customers/" + id, requestOptions)
+        fetch("https://hammerhead-app-tzlph.ondigitalocean.app/customers/" + id, requestOptions)
             .then((response) => response.json())
             .then((result) => {
                 setCustomerDt(result);
+                console.log(result)
             })
             .catch((error) => console.error(error));
     }
-
+   
     function updateCustomer() {
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
@@ -43,7 +44,7 @@ export default function EditCustomer() {
             redirect: "follow",
         };
 
-        fetch("https://hammerhead-app-tzlph.ondigitalocean.app/customers/24579" + "customers/" + id, requestOptions)
+        fetch("https://hammerhead-app-tzlph.ondigitalocean.app/customers/"+ id, requestOptions)
             .then((response) => response.text())
             .then((result) => {
                 console.log(result);
@@ -54,15 +55,15 @@ export default function EditCustomer() {
 
     return (
         <div>
-            Edit Driver
+            Edit Details
             <Grid container spacing={2}>
                 <Grid item xs={8}>
                     <TextField
                         id="outlined-basic"
                         label="Name"
                         variant="outlined"
-                        name="customerName"
                         value={customerDt.customerName}
+                        name="customerName"
                         onChange={(e) =>
                             setCustomerDt((prev) => {
                                 return {
@@ -78,8 +79,8 @@ export default function EditCustomer() {
                         id="outlined-basic"
                         label="Mobile"
                         variant="outlined"
-                        name="driverMobile"
-                        value={customerDt.customerMobile}
+                        value={customerDt.customerMobile}                       
+                        name="customerMobile"
                         onChange={(e) =>
                             setCustomerDt((prev) => {
                                 return {
@@ -96,9 +97,9 @@ export default function EditCustomer() {
                         label="Email"
                         variant="outlined"
                         name="customerEmail"
-                        value={customerDterDt.driverEmail}
+                        value={customerDt.customerEmail}
                         onChange={(e) =>
-                            setcustomerDt((prev) => {
+                            setCustomerDt((prev) => {
                                 return {
                                     ...prev,
                                     [e.target.name]: e.target.value,
