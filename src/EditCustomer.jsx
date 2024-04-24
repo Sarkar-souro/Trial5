@@ -55,12 +55,14 @@ export default function EditCustomer() {
     }
 
     return (
-        <div>
+        <div className="container">
+        <div className="edit-customer-container" >
             Edit Details
             <Grid container spacing={2}>
-                <Grid item xs={8}>
+                <Grid className="edit-customer-grid" item xs={8}>
                     <TextField
-                        id="outlined-basic"
+                        className="edit-customer-textfield"
+                        id="customer-name"
                         label="Name"
                         variant="outlined"
                         value={customerDt.customerName}
@@ -77,7 +79,8 @@ export default function EditCustomer() {
                 </Grid>
                 <Grid item xs={8}>
                     <TextField
-                        id="outlined-basic"
+                        className="edit-customer-textfield"
+                        id="customer-mobile"
                         label="Mobile"
                         variant="outlined"
                         value={customerDt.customerMobile}                       
@@ -94,7 +97,8 @@ export default function EditCustomer() {
                 </Grid>
                 <Grid item xs={8}>
                     <TextField
-                        id="outlined-basic"
+                        className="edit-customer-textfield"
+                        id="customer-email"
                         label="Email"
                         variant="outlined"
                         name="customerEmail"
@@ -111,9 +115,10 @@ export default function EditCustomer() {
                 </Grid>
                 
             </Grid>
-            <Button onClick={() => updateCustomer()} variant="contained">
+            <Button className="edit-customer-button" onClick={() => updateCustomer()} variant="contained">
                 Update
             </Button>
+        </div>
         </div>
     );
 }

@@ -1,10 +1,12 @@
 /* Container for the EditCustomer component */
-.container {
+.edit-customer-container {
     margin: auto;
-    background-color: aqua;
+    background-color: #f0f0f0;
     width: 80%;
-    max-width: 800px;
+    max-width: 400px;
     padding: 20px;
+    border-radius: 8px;
+   
   }
   
   /* Title style */
@@ -24,13 +26,23 @@
   
   /* TextField style */
   .edit-customer-textfield {
-    width: 100%;
+    width: fit-content;
+    background-color: azure;
   }
   
   /* Button style */
   .edit-customer-button {
     margin-top: 20px;
-    width: 100%;
+    width: 10vw;
+    display: flex;
+    background-color: #007bff;
+    color: #fff;
+    justify-content: center;
   }
   
-  
+  .container{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    
+  }

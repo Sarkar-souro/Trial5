@@ -39,7 +39,7 @@ export default function AddCustomer() {
       <Grid container spacing={2}>
         <Grid item xs={8}>
           <TextField
-            id="outlined-basic"
+            id="name"
             label="Name"
             variant="outlined"
             name="customerName"
@@ -56,7 +56,7 @@ export default function AddCustomer() {
         </Grid>
         <Grid item xs={8}>
           <TextField
-            id="outlined-basic"
+            id="mobile"
             label="Mobile"
             variant="outlined"
             name="customerMobile"
@@ -73,7 +73,7 @@ export default function AddCustomer() {
         </Grid>
         <Grid item xs={8}>
           <TextField
-            id="outlined-basic"
+            id="email"
             label="Email"
             variant="outlined"
             name="customerEmail"
