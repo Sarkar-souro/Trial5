@@ -413,8 +413,10 @@ export default function CustomPaginationActionsTable() {
                 </TableCell>
                 <TableCell style={{ width: 160 }} align="right">
                   {row.appVersion}
+                </TableCell >
+                <TableCell style={{ width: 160 }} align="right">
+                <Link  to={"/edit/" + row.customerId }>Edit</Link>
                 </TableCell>
-                <Link to={"/edit/" + row.customerId}>Edit</Link>
               </TableRow>
             ))
           )}

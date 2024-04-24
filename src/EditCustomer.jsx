@@ -3,6 +3,7 @@ import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";
 import { Button } from "@mui/material";
 import { useParams } from "react-router-dom";
+import "./EditCustomer.css"
 
 export default function EditCustomer() {
     const [customerDt, setCustomerDt] = useState({

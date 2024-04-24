@@ -1,0 +1,36 @@
+/* Container for the EditCustomer component */
+.container {
+    margin: auto;
+    background-color: aqua;
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+  }
+  
+  /* Title style */
+  .edit-customer-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Grid layout for input fields */
+  .edit-customer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    color: "lightyellow";
+    gap: 20px;
+  }
+  
+  /* TextField style */
+  .edit-customer-textfield {
+    width: 100%;
+  }
+  
+  /* Button style */
+  .edit-customer-button {
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  

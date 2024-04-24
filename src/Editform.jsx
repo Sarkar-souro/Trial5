@@ -1,89 +1,97 @@
 import React, { useState } from "react";
-import axios from "axios";
-import { useParams } from "react-router-dom";
+import TextField from "@mui/material/TextField";
+import Grid from "@mui/material/Grid";
+import { Button } from "@mui/material";
 
-function EditForm  ()  {
-    const data = {
-        
-        customerName: "",
-        customerMobile: "",
-        customerEmail: "",
+
+export default function AddCustomer() {
+  const [customerDt, setCustomerDt] = useState({
+    customerName: "",
+    customerMobile: "",
+    customerEmail: "",
+  });
+
+  function saveCustomer() {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const raw = JSON.stringify(customerDt);
+
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
     };
 
-    const [inputdata, setInputdata] = useState(data);
+    fetch(`https://hammerhead-app-tzlph.ondigitalocean.app/customers`, requestOptions)
+      .then((response) => response.text())
+      .then((result) => {
+        console.log(result);
+        alert("Saved");
+      })
+      .catch((error) => console.error(error));
+  }
 
-    const handleInput = (e) => {
-        setInputdata({ ...inputdata, [e.target.name]: e.target.value });
-    };
-
-    function handleSubmit(e) {
-        e.preventDefault();
-        axios
-            .post(
-                "https://hammerhead-app-tzlph.ondigitalocean.app/customers",
-                inputdata
-            )
-            .then((resp) => {
-                console.log(resp.inputdata);
-            })
-            .catch((err) => console.log(err));
-    }
-    let { id } = useParams();
-
-    console.log("id===>" + id);
-
-    return (
-        <>
-            <div className="app">
-                <h2>Edit Customer</h2>
-                <form>
-                    <div>
-                       
-                        <label> Name:</label>
-                        <input
-                            type="text"
-                            onChange={handleInput}
-                            id="username"
-                            name="customerName"
-                            autoComplete="off"
-                        />
-
-                        <br></br>
-                        <br></br>
-                        <label> Mobile:</label>
-                        <input
-                            type="text"
-                            onChange={handleInput}
-                            id="mobileNo"
-                            name="Mobile"
-                            autoComplete="off"
-                        />
-
-                        <br></br>
-                        <br></br>
-                        <label htmlFor="emailId"> customerEmail</label>
-                        <input
-                            type="email"
-                            onChange={handleInput}
-                            id="emailId"
-                            name="customerEmail"
-                            autoComplete="off"
-                        />
-                        <button
-                            onClick={handleSubmit}
-                            style={{
-                                backgroundColor: "blue",
-                                color: "white",
-                                marginBottom: "15px",
-                            }}
-                            type="update"
-                        >
-                            Update
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </>
-    );
-};
-export default EditForm;
+  return (
+    <div>
+      AddCustomer
+      <Grid container spacing={2}>
+        <Grid item xs={8}>
+          <TextField
+            id="outlined-basic"
+            label="Name"
+            variant="outlined"
+            name="customerName"
+            value={customerDt.customerName}
+            onChange={(e) =>
+              setCustomerDt((prev) => {
+                return {
+                  ...prev,
+                  [e.target.name]: e.target.value,
+                };
+              })
+            }
+          />
+        </Grid>
+        <Grid item xs={8}>
+          <TextField
+            id="outlined-basic"
+            label="Mobile"
+            variant="outlined"
+            name="customerMobile"
+            value={customerDt.customerMobile}
+            onChange={(e) =>
+              setCustomerDt((prev) => {
+                return {
+                  ...prev,
+                  [e.target.name]: e.target.value,
+                };
+              })
+            }
+          />
+        </Grid>
+        <Grid item xs={8}>
+          <TextField
+            id="outlined-basic"
+            label="Email"
+            variant="outlined"
+            name="customerEmail"
+            value={customerDt.customerEmail}
+            onChange={(e) =>
+              setCustomerDt((prev) => {
+                return {
+                  ...prev,
+                  [e.target.name]: e.target.value,
+                };
+              })
+            }
+          />
+        </Grid>
+      </Grid>
+      <Button onClick={() => saveCustomer()} variant="contained">
+        Save
+      </Button>
+    </div>
+  );
+}

@@ -9,7 +9,7 @@ const CustomerList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://hammerhead-app-tzlph.ondigitalocean.app/customers?pageNo=1&pageSize=20`, requestOptions);
+        const response = await axios.get(`https://hammerhead-app-tzlph.ondigitalocean.app/customers?pageNo=1&pageSize=20`);
         setCustomers(response.data.content);
       } catch (error) {
         console.error('Error fetching data:', error);
